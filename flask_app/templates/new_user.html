@@ -12,6 +12,7 @@
 <body>
     <h1>Add a New User</h1>
     <div class="background">
+<<<<<<< HEAD
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
@@ -51,6 +52,35 @@
                 <ul>
                     <a href="/reset" id="clear">Clear Form</a>      <a href="/users" id="home">Home</a>
                 </ul>
+=======
+        <div class="create">
+            <form id="create" action="/user/create" method="post">
+                <input type="hidden" name="id" value="{{users.id}}">
+            <ul>
+                <label for="first_name">First Name:</label id="label">
+            </ul>
+            <ul>
+                <input type="text" name="first_name" id="input">
+            </ul>
+            <ul>
+                <label for="last_name">Last Name:</label id="label">
+            </ul>
+            <ul>
+                <input type="text" name="last_name" id="input">
+            </ul>
+            <ul>
+                <label for="email" >Email:</label id="label">
+            </ul>
+            <ul>
+                <input type="text" name="email" id="input">
+            </ul>
+            <ul>
+                <input action="/user/show/{{ users.id }}" type="submit" value="Create" class="btn btn-light" id="submit" >
+            </ul>
+            <ul>
+                <a href="/reset" id="clear">Clear Form</a>      <a href="/users" id="home">Home</a>
+            </ul>
+>>>>>>> 85c3de3971736d58d5e9ded73ed21d0da4245073
             </form>
         </div>
     </div>
