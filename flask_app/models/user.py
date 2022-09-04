@@ -1,6 +1,10 @@
 # import the function that will return an instance of a connection
-from mysqlconnection import connectToMySQL
-# model the class after the friend table from our database
+from operator import truediv
+from flask_app.config.mysqlconnection import connectToMySQL
+from flask import flash
+import re	# the regex module
+#email validation
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 
 class User:
@@ -12,6 +16,28 @@ class User:
         self.email = data['email']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+
+    #This is a static method to validate a new user's data
+    @staticmethod
+    def user_is_valid(user_info):
+        is_valid = True
+
+        if len(user_info["first_name"]) <= 0:
+            flash("First Name Is Required")
+            is_valid = False
+        if len(user_info["last_name"]) <= 0:
+            flash("Last Name Is Required")
+            is_valid = False
+        if len(user_info["email"]) <= 0:
+            flash("Email Is Required")
+            is_valid = False
+        if not EMAIL_REGEX.match(user_info['email']):
+            flash('Email Format Not Valid')
+            is_valid = False
+        print("Validation: User Is Valid:", is_valid)
+        return is_valid
+
+
 
 
     # Now we use class methods to query our database

@@ -21,6 +21,26 @@ h1{
 
 /* This is the start of the new_user.html */
 
+.flash{
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: -60px;
+    display: flex;
+    justify-content: center;
+}
+
+#flash_message{
+    font-size: 24px;
+    color: red;
+    text-align: center;
+    margin-bottom: -20px;
+}
+
+#flash_division{
+    text-align: center;
+    color: gray;
+    font-size: 24px;
+}
 
 #home:hover{
     color: white;
@@ -91,8 +111,9 @@ p{
 
 .home{
     margin-left: 48%;
+    margin-top: 30px;
 }
 
 #title{
-    margin: 0 auto;
+    margin-left: 10px;
 }
