@@ -1,15 +1,15 @@
 # import the function that will return an instance of a connection
-<<<<<<< HEAD
+
 from operator import truediv
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 import re	# the regex module
 #email validation
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
-=======
+
 from flask_app.config.mysqlconnection import connectToMySQL
 # model the class after the friend table from our database
->>>>>>> 85c3de3971736d58d5e9ded73ed21d0da4245073
+
 
 
 class User:
